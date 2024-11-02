@@ -1,0 +1,42 @@
+[package]
+name = "citypy_rust_utils_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ndarray = "0.15.6"
+ndarray-stats = "0.5.1"
+plotly = "0.8.4"
+rand = "0.8.5"
+image = { version = "0.25.1", features = ["tiff"] }
+gif = "0.13.1"
+approx = "0.5.1"
+tiff = "0.7"
+geo = "0.28.0"
+ordered-float = "4.2.1"
+rand_distr = "0.4.3"
+geojson = "0.24.1"
+serde_json = "1.0.118"
+serde = { version = "1.0.203", features = ["derive"] }
+rstar = "0.12.0"
+rerun = "0.17.0"
+nshare = { version = "0.9.0", features = ["image"] }
+uuid = "1.9.1"
+plexus = "0.0.11"
+petgraph = "0.6.5"
+lox = "0.1.1"
+geos = { version = "9.0.0", features = ["geo", "geo-types"] }
+voronoice = "0.2.0"
+geo-clipper = "0.8.0"
+geo-buffer = "0.2.0"
+clap = { version = "4.5.11", features = ["derive"] }
+ndarray-npy = "0.8.1"
+anyhow = "1.0.86"
+glob = "0.3.1"
+rstat = "0.6.0"
+rv = "0.17.0"
+struct_iterable = "0.1.1"
+rayon = "1.10.0"
+offset-polygon = "0.1.0"
+rand_chacha = "0.3.1"
+bytemuck = "1.16.1"
