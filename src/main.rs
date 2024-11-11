@@ -38,7 +38,7 @@ fn main() {
     let st = rerun::RecordingStreamBuilder::new("citypy")
         .spawn().unwrap();
     //let stream = Rc::new(st);
-    let stream = Rc::new(ChunkedRerunStream::new(st, 1, true));
+    let stream = Rc::new(ChunkedRerunStream::new(st, 400, true));
     let template = Template::from_file(&args.template, &args.cluster_dir).unwrap();
     let domain = Domain::from_template(&template);
     let city_center_row = template.city_center.0;
