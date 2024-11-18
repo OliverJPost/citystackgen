@@ -175,7 +175,12 @@ impl BuildingSystemBuilder for BuildingSystemBuilderCombined {
         println!("Generating buildings...");
         for enclosure in enclosures_layer.get_features() {
             let enclosure = Polygon::try_from(enclosure).unwrap();
-            let class = class_grid.get(((enclosure.centroid().unwrap().y() / RASTER_CELL_SIZE as f64) as usize, (enclosure.centroid().unwrap().x() / RASTER_CELL_SIZE as f64) as usize)).unwrap();
+            let re = class_grid.get(((enclosure.centroid().unwrap().y() / RASTER_CELL_SIZE as f64) as usize, (enclosure.centroid().unwrap().x() / RASTER_CELL_SIZE as f64) as usize));
+            if re.is_none() {
+                println!("No building class found for {:?}", enclosure);
+                continue;
+            }
+            let class = re.unwrap();
             let bclass = BuildingClass::from_int(*class);
             println!("Building class {:?}", &bclass);
             if enclosure.unsigned_area() < 10000. {
